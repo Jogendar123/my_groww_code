@@ -22,7 +22,7 @@ STRIKE_INTERVAL = 50
 STRIKE_COUNT = 10
 TOP_N = 2
 EXPIRY_DATE = "25O20"
-CANDLE_INTERVAL_MIN = 30   # 🔹 user-defined candle interval (e.g., 15 or 30)
+CANDLE_INTERVAL_MIN = 10   # 🔹 user-defined candle interval (e.g., 15 or 30)
 
 
 TRADES_LOG_CSV = "trades_log.csv"
