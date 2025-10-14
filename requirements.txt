@@ -1,0 +1,4 @@
+flask
+pandas
+growwapi
+pytz
