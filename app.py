@@ -1,21 +1,16 @@
 from flask import Flask
 import threading
-import time
 import os
+import main   # 👈 this imports your main.py file
 
 app = Flask(__name__)
 
-# Global variable to control your background process
 is_running = False
 thread = None
 
 def background_task():
-    """Your main code logic — runs continuously when started"""
-    global is_running
-    while is_running:
-        # Replace this with your real code
-        print("Running market logic...")
-        time.sleep(5)  # simulate delay
+    """Run your real logic from main.py"""
+    main.run_script()  # 👈 call the function from main.py
 
 @app.route('/start')
 def start():
@@ -24,7 +19,7 @@ def start():
         is_running = True
         thread = threading.Thread(target=background_task)
         thread.start()
-        return "✅ Script started successfully!"
+        return "✅ Script started successfully (main.py running)!"
     else:
         return "⚠️ Script is already running!"
 
