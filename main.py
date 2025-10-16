@@ -13,7 +13,7 @@ from growwapi import GrowwAPI
 import pytz
 
 # ========= USER CONFIG =========
-API_AUTH_TOKEN = "eyJraWQiOiJaTUtjVXciLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NjA0ODgyMDAsImlhdCI6MTc2MDQwNzIyNiwibmJmIjoxNzYwNDA3MjI2LCJzdWIiOiJ7XCJ0b2tlblJlZklkXCI6XCJjYWQ0NmIzYi04M2Q0LTQ5ZDYtYWMyYS01ZmM3OTJhZDBjYmZcIixcInZlbmRvckludGVncmF0aW9uS2V5XCI6XCJlMzFmZjIzYjA4NmI0MDZjODg3NGIyZjZkODQ5NTMxM1wiLFwidXNlckFjY291bnRJZFwiOlwiZjk0MDVhODctNjdmMy00NzJjLThiZWEtMTNkOTJjZjc3NDZhXCIsXCJkZXZpY2VJZFwiOlwiYjcyODAxOWQtMTUwOS00ZjFlLWFjNDItYWE1ODE5YWMxMWRkXCIsXCJzZXNzaW9uSWRcIjpcIjAzZDUyNTcwLWMyM2UtNDc1My04Njc0LTIzYzg3ZTkxZmNjOVwiLFwiYWRkaXRpb25hbERhdGFcIjpcIno1NC9NZzltdjE2WXdmb0gvS0EwYkFBcnZtS25Wb3hvZjkyZ1pwNVNZU1ZSTkczdTlLa2pWZDNoWjU1ZStNZERhWXBOVi9UOUxIRmtQejFFQisybTdRPT1cIixcInJvbGVcIjpcIm9yZGVyLWJhc2ljLGxpdmVfZGF0YS1iYXNpYyxub25fdHJhZGluZy1iYXNpYyxvcmRlcl9yZWFkX29ubHktYmFzaWMsYmFja190ZXN0XCIsXCJzb3VyY2VJcEFkZHJlc3NcIjpcIjI0MDI6M2E4MDo2YTM6OTlkYjo3ODNkOjU4ZmY6ZmU3NDoxZDNlLDE3Mi42OS45NC4xMTksMzUuMjQxLjIzLjEyM1wiLFwidHdvRmFFeHBpcnlUc1wiOjE3NjA0ODgyMDAwMDB9IiwiaXNzIjoiYXBleC1hdXRoLXByb2QtYXBwIn0.fahUvT7nPzUteM04NY0FpJZzfQ2cCdpDRMupBlyPjGWvhvR-hPrb3Cbi9h0FNJ7A9R1W7ympGsSHAeEkyjSRZQ"
+API_AUTH_TOKEN = "eyJraWQiOiJaTUtjVXciLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NjA2NjEwMDAsImlhdCI6MTc2MDU4ODk2NywibmJmIjoxNzYwNTg4OTY3LCJzdWIiOiJ7XCJ0b2tlblJlZklkXCI6XCJlMWFjNjM4Zi01N2Y0LTQ5NjYtYWJkZC1iYzM4MmRiOWI5YjZcIixcInZlbmRvckludGVncmF0aW9uS2V5XCI6XCJlMzFmZjIzYjA4NmI0MDZjODg3NGIyZjZkODQ5NTMxM1wiLFwidXNlckFjY291bnRJZFwiOlwiZjk0MDVhODctNjdmMy00NzJjLThiZWEtMTNkOTJjZjc3NDZhXCIsXCJkZXZpY2VJZFwiOlwiYjcyODAxOWQtMTUwOS00ZjFlLWFjNDItYWE1ODE5YWMxMWRkXCIsXCJzZXNzaW9uSWRcIjpcIjczMGE3MDEzLTZkN2YtNGM3Mi04MWVkLTRiNjc4ZDQxNzgxNlwiLFwiYWRkaXRpb25hbERhdGFcIjpcIno1NC9NZzltdjE2WXdmb0gvS0EwYkFBcnZtS25Wb3hvZjkyZ1pwNVNZU1ZSTkczdTlLa2pWZDNoWjU1ZStNZERhWXBOVi9UOUxIRmtQejFFQisybTdRPT1cIixcInJvbGVcIjpcIm9yZGVyLWJhc2ljLGxpdmVfZGF0YS1iYXNpYyxub25fdHJhZGluZy1iYXNpYyxvcmRlcl9yZWFkX29ubHktYmFzaWMsYmFja190ZXN0XCIsXCJzb3VyY2VJcEFkZHJlc3NcIjpcIjI0MDI6M2E4MDo2ODU6YTQ4MjozMDEwOmJmZjpmZTkwOjNkODAsMTcyLjY5Ljg2LjE4NywzNS4yNDEuMjMuMTIzXCIsXCJ0d29GYUV4cGlyeVRzXCI6MTc2MDY2MTAwMDAwMH0iLCJpc3MiOiJhcGV4LWF1dGgtcHJvZC1hcHAifQ.eW6hEMOG5xPK41h2DnpgY2bvLO-P1zFRQr15vybf8KYEU6zw8Ycupq1IF5eh8cX-vFYtqMjSKRo2wRDTmQpDgg"
 DRY_RUN = False
 POLL_INTERVAL = 120
 POSITION_FILE = "positions_state.json"
@@ -379,7 +379,7 @@ def square_off_all(state):
                 except Exception:
                     exit_price = None
                 if entry_price and exit_price is not None:
-                    log_trade(symbol, "LONG", entry_price, exit_price, remaining, entry_time, datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S"), "SQUARE_OFF")
+                    log_trade(symbol, "LONG", entry_price, exit_price, remaining, entry_time, datetime.now(IST).strftime("%Y-%m-%d %Y-%m-%d %H:%M:%S"), "SQUARE_OFF")
             info['position'] = None
             info['entry_price'] = None
             info['entry_time'] = None
@@ -423,30 +423,17 @@ def analyze_and_trade(symbol, state):
 
 
     prev_high = prev_ha['h']
-    seventy_pct_level = 0.7 * prev_high
+    seventy_pct_level = 0.7 * prev_high # This variable is kept, but its usage in exit logic is removed as per request.
     current_price = float(df10['c'].iloc[-1])
 
     now = now_ist()
-    entry_allowed_time = now.replace(hour=9, minute=30, second=0, microsecond=0) # Original: 9:30 AM
-    
-    # Adjusted entry allowance for 9:25 AM trade based on 10-min candle interval
-    # The first 10-min candle closes at 9:25 AM (9:15 to 9:25).
-    # If CANDLE_INTERVAL_MIN is 10, the first candle will be from 9:15-9:25.
-    # To execute at 9:25, we need the *previous* candle (which would be from the previous day's close)
-    # and the current one to complete for 'prev_ha' and 'prev_norm'.
-    # With `include_previous_day=True`, `df10` should have candles up to 9:25.
-    # So `df10.iloc[-2]` would be 9:15-9:25 candle, and `df10.iloc[-1]` would be the live candle data.
-    # We want to check `prev_ha` and `prev_norm` for the candle ending at 9:25.
-    # This means the *current* time for the `now` variable should be after 9:25.
     
     # Adjusting entry_allowed_time to reflect earliest possible trade execution time.
-    # For a 10-min candle interval, the first candle completes at 9:25.
-    # The logic uses `prev_ha` and `prev_norm`, which means it needs at least 2 complete candles
-    # before the current (incomplete) one.
-    # If we want trade at 9:25, we need the candle ending 9:25 to be `prev_norm/ha`.
-    # This implies the current timestamp needs to be past 9:25.
     first_candle_close_time = (datetime(2000,1,1,MARKET_OPEN[0],MARKET_OPEN[1]) + timedelta(minutes=CANDLE_INTERVAL_MIN)).time()
     entry_allowed_time = now.replace(hour=first_candle_close_time.hour, minute=first_candle_close_time.minute, second=0, microsecond=0)
+
+    # 1) NEW: No new buy orders after 12:05 PM IST
+    no_new_buy_after_time = now.replace(hour=12, minute=5, second=0, microsecond=0)
 
 
     df_last_day = get_historical_ohlc(symbol, minutes=CANDLE_INTERVAL_MIN, days=2, include_previous_day=True) # Fetch for POC as well
@@ -469,15 +456,13 @@ def analyze_and_trade(symbol, state):
         if is_prev_ha_red:
             exit_condition = True
             exit_reason = "HA_RED"
-        elif is_prev_norm_red:
+        # 2) REMOVED: elif is_prev_norm_red: - removed as per request
+        # 3) REMOVED: elif inst.get('entry_price') and current_price >= 1.8 * inst['entry_price']: - removed as per request
+        # 3) REMOVED: elif current_price <= seventy_pct_level: - removed as per request
+        # 4) NEW: Add exit criteria if price reaches below 30% of entry price
+        elif inst.get('entry_price') and current_price < 0.3 * inst['entry_price']:
             exit_condition = True
-            exit_reason = "NORMAL_RED"
-        elif inst.get('entry_price') and current_price >= 1.8 * inst['entry_price']:
-            exit_condition = True
-            exit_reason = "TARGET_1.5X" # Changed to 2.0x, but message says 1.5x - needs consistency. Keeping as per code.
-        elif current_price <= seventy_pct_level:
-            exit_condition = True
-            exit_reason = "PRICE_LESS_70PCT_PREV_HA_HIGH"
+            exit_reason = "PRICE_BELOW_30PCT_ENTRY"
 
         if exit_condition and qty > 0:
             logger.info("[%s] 🔴 Exit triggered (%s). Attempting SELL qty=%s", symbol, exit_reason, qty)
@@ -521,8 +506,9 @@ def analyze_and_trade(symbol, state):
     # ===== ENTRY LOGIC =====
     allow_entry = (
         now >= entry_allowed_time and
+        now < no_new_buy_after_time and # 1) NEW: No new buy orders after 12:05 PM IST
         is_prev_ha_green and
-        is_prev_norm_green and  # 🌟 NEW CONDITION ADDED HERE
+        is_prev_norm_green and  # Retained as per request
         cooldown_passed and
         poc_price and
         current_price > poc_price
@@ -627,12 +613,9 @@ def main_loop():
         elapsed = cycle_end - cycle_start
         sleep_time = max(1, POLL_INTERVAL - elapsed)
         logger.debug("⏳ Cycle done. Sleeping %.1f s", sleep_time)
-        time.sleep(sleep_time)
-
-    # Final save on exit
+            # Final save on exit
     save_state(state)
     logger.info("Trader stopped. State saved.")
 
 if __name__ == "__main__":
-    pass  # controlled via Flask app
     main_loop()
