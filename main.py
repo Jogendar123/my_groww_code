@@ -13,15 +13,15 @@ from growwapi import GrowwAPI
 import pytz
 
 # ========= USER CONFIG =========
-API_AUTH_TOKEN = "eyJraWQiOiJaTUtjVXciLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NjA2NjEwMDAsImlhdCI6MTc2MDU4ODk2NywibmJmIjoxNzYwNTg4OTY3LCJzdWIiOiJ7XCJ0b2tlblJlZklkXCI6XCJlMWFjNjM4Zi01N2Y0LTQ5NjYtYWJkZC1iYzM4MmRiOWI5YjZcIixcInZlbmRvckludGVncmF0aW9uS2V5XCI6XCJlMzFmZjIzYjA4NmI0MDZjODg3NGIyZjZkODQ5NTMxM1wiLFwidXNlckFjY291bnRJZFwiOlwiZjk0MDVhODctNjdmMy00NzJjLThiZWEtMTNkOTJjZjc3NDZhXCIsXCJkZXZpY2VJZFwiOlwiYjcyODAxOWQtMTUwOS00ZjFlLWFjNDItYWE1ODE5YWMxMWRkXCIsXCJzZXNzaW9uSWRcIjpcIjczMGE3MDEzLTZkN2YtNGM3Mi04MWVkLTRiNjc4ZDQxNzgxNlwiLFwiYWRkaXRpb25hbERhdGFcIjpcIno1NC9NZzltdjE2WXdmb0gvS0EwYkFBcnZtS25Wb3hvZjkyZ1pwNVNZU1ZSTkczdTlLa2pWZDNoWjU1ZStNZERhWXBOVi9UOUxIRmtQejFFQisybTdRPT1cIixcInJvbGVcIjpcIm9yZGVyLWJhc2ljLGxpdmVfZGF0YS1iYXNpYyxub25fdHJhZGluZy1iYXNpYyxvcmRlcl9yZWFkX29ubHktYmFzaWMsYmFja190ZXN0XCIsXCJzb3VyY2VJcEFkZHJlc3NcIjpcIjI0MDI6M2E4MDo2ODU6YTQ4MjozMDEwOmJmZjpmZTkwOjNkODAsMTcyLjY5Ljg2LjE4NywzNS4yNDEuMjMuMTIzXCIsXCJ0d29GYUV4cGlyeVRzXCI6MTc2MDY2MTAwMDAwMH0iLCJpc3MiOiJhcGV4LWF1dGgtcHJvZC1hcHAifQ.eW6hEMOG5xPK41h2DnpgY2bvLO-P1zFRQr15vybf8KYEU6zw8Ycupq1IF5eh8cX-vFYtqMjSKRo2wRDTmQpDgg"
+API_AUTH_TOKEN = "eyJraWQiOiJaTUtjVXciLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NjA3NDc0MDAsImlhdCI6MTc2MDY3MjI3MSwibmJmIjoxNzYwNjcyMjcxLCJzdWIiOiJ7XCJ0b2tlblJlZklkXCI6XCJhN2RjNDFkMi0xYWYwLTQ2MGItOWY1My01Yzg5OTAwMGViNTFcIixcInZlbmRvckludGVncmF0aW9uS2V5XCI6XCJlMzFmZjIzYjA4NmI0MDZjODg3NGIyZjZkODQ5NTMxM1wiLFwidXNlckFjY291bnRJZFwiOlwiZjk0MDVhODctNjdmMy00NzJjLThiZWEtMTNkOTJjZjc3NDZhXCIsXCJkZXZpY2VJZFwiOlwiYjcyODAxOWQtMTUwOS00ZjFlLWFjNDItYWE1ODE5YWMxMWRkXCIsXCJzZXNzaW9uSWRcIjpcImQwOGRmZWRhLTkzOTAtNGE5Zi04MzI1LWVkMGJlZWZhOTY2MFwiLFwiYWRkaXRpb25hbERhdGFcIjpcIno1NC9NZzltdjE2WXdmb0gvS0EwYkFBcnZtS25Wb3hvZjkyZ1pwNVNZU1ZSTkczdTlLa2pWZDNoWjU1ZStNZERhWXBOVi9UOUxIRmtQejFFQisybTdRPT1cIixcInJvbGVcIjpcIm9yZGVyLWJhc2ljLGxpdmVfZGF0YS1iYXNpYyxub25fdHJhZGluZy1iYXNpYyxvcmRlcl9yZWFkX29ubHktYmFzaWMsYmFja190ZXN0XCIsXCJzb3VyY2VJcEFkZHJlc3NcIjpcIjI0MDI6M2E4MDo2OTQ6ODMxNDphODZmOjJmZmY6ZmUzMzplMWMyLDE3Mi42OS4xNzguMTk1LDM1LjI0MS4yMy4xMjNcIixcInR3b0ZhRXhwaXJ5VHNcIjoxNzYwNzQ3NDAwMDAwfSIsImlzcyI6ImFwZXgtYXV0aC1wcm9kLWFwcCJ9.HAmE46L4vswisyWZ2ROOFZE9AN1QDlGXyN5-O4QKdzMBwwWhV-c3D2Vpm62pULedZlTLYy4BP3gH-sCAPXSAMQ" # Fill in your Groww API Auth Token
 DRY_RUN = False
 POLL_INTERVAL = 120
 POSITION_FILE = "positions_state.json"
 PRICE_THRESHOLD = 60
 STRIKE_INTERVAL = 50
 STRIKE_COUNT = 10
-TOP_N = 2
-EXPIRY_DATE = "25O20"
+TOP_N = 2 # Max number of new positions to open per cycle that meet criteria
+EXPIRY_DATE = "25O20" # Example: "25O20" for 25th Oct 2020. Adjust for current expiry.
 CANDLE_INTERVAL_MIN = 10   # 🔹 user-defined candle interval (e.g., 15 or 30)
 
 
@@ -242,7 +242,7 @@ def calculate_poc(df):
 
 # ========= ORDER HANDLER =========
 def place_order(symbol, quantity, side):
-    """Place market order via Groww (or dry-run). Return True on 'placed', else False."""
+    """Place market order via Groww (or dry-run). Return order response on 'placed', else None."""
     if DRY_RUN:
         logger.info("[DRY RUN] Would place %s %s on %s", side, quantity, symbol)
         return {"status":"dry_run","symbol":symbol,"qty":quantity,"side":side}
@@ -312,7 +312,11 @@ def fetch_groww_positions():
         return {}
 
 # ========= INSTRUMENT SELECTION =========
-def fetch_top_options():
+def fetch_eligible_options_sorted_by_ltp():
+    """
+    Fetches NIFTY options, filters by price threshold, and returns them
+    sorted by LTP descending (highest LTP < threshold first).
+    """
     try:
         if groww is None:
             raise Exception("Groww not initialized")
@@ -328,27 +332,26 @@ def fetch_top_options():
     atm_strike = round(nifty_value / STRIKE_INTERVAL) * STRIKE_INTERVAL
     ce_symbols = [f"NIFTY{EXPIRY_DATE}{atm_strike + i*STRIKE_INTERVAL}CE" for i in range(-STRIKE_COUNT, STRIKE_COUNT+1)]
     pe_symbols = [f"NIFTY{EXPIRY_DATE}{atm_strike + i*STRIKE_INTERVAL}PE" for i in range(-STRIKE_COUNT, STRIKE_COUNT+1)]
-    all_syms = [{"symbol":s,"type":"CE"} for s in ce_symbols] + [{"symbol":s,"type":"PE"} for s in pe_symbols]
+    all_syms = ce_symbols + pe_symbols
 
-    results = []
-    logger.info("ℹ️ Fetching quotes for CE and PE symbols...")
-    for item in all_syms:
-        symbol = item["symbol"]
+    eligible_options = []
+    logger.info("ℹ️ Fetching quotes for CE and PE symbols around ATM...")
+    for symbol in all_syms:
         try:
             quote = groww.get_quote(symbol, exchange=groww.EXCHANGE_NSE, segment=groww.SEGMENT_FNO)
             ltp = quote.get("last_price") or quote.get("ltp") or 0
-            if ltp >= PRICE_THRESHOLD:
-                continue
-            results.append({"symbol": symbol, "type": item["type"], "ltp": float(ltp)})
-        except Exception:
+            # Filter by PRICE_THRESHOLD
+            if 0 < ltp < PRICE_THRESHOLD: # Ensure LTP is positive
+                eligible_options.append({"symbol": symbol, "ltp": float(ltp)})
+        except Exception as e:
+            logger.debug(f"Could not get quote for {symbol}: {e}") # Debugging for specific symbol quote failures
             continue
 
-    ce_opts = sorted([r for r in results if r['type']=="CE"], key=lambda x: x['ltp'], reverse=True)[:TOP_N]
-    pe_opts = sorted([r for r in results if r['type']=="PE"], key=lambda x: x['ltp'], reverse=True)[:TOP_N]
-
-    final_syms = ce_opts + pe_opts
-    logger.info("📈 Instruments fetched from Groww API this cycle: %s", [i['symbol'] for i in final_syms])
-    return final_syms
+    # Sort eligible options by LTP in descending order
+    eligible_options.sort(key=lambda x: x['ltp'], reverse=True)
+    
+    logger.info("📈 Eligible instruments (LTP < %s, sorted by LTP desc): %s", PRICE_THRESHOLD, [i['symbol'] for i in eligible_options])
+    return eligible_options
 
 # ========= SQUARE-OFF =========
 def square_off_all(state):
@@ -379,7 +382,7 @@ def square_off_all(state):
                 except Exception:
                     exit_price = None
                 if entry_price and exit_price is not None:
-                    log_trade(symbol, "LONG", entry_price, exit_price, remaining, entry_time, datetime.now(IST).strftime("%Y-%m-%d %Y-%m-%d %H:%M:%S"), "SQUARE_OFF")
+                    log_trade(symbol, "LONG", entry_price, exit_price, remaining, entry_time, datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S"), "SQUARE_OFF")
             info['position'] = None
             info['entry_price'] = None
             info['entry_time'] = None
@@ -400,31 +403,34 @@ def analyze_and_trade(symbol, state):
         'last_exit_time': None
     })
 
-    # MODIFIED: Fetch historical OHLC including previous day's data
-    df10 = get_historical_ohlc(symbol, minutes=CANDLE_INTERVAL_MIN, days=2, include_previous_day=True) 
+    # Fetch historical OHLC including previous day's data
+    # We need at least 3 HA candles for the new entry logic, so ensure enough underlying OHLC.
+    # Set days=5 to be very safe for enough data, given potential market holidays etc.
+    df10 = get_historical_ohlc(symbol, minutes=CANDLE_INTERVAL_MIN, days=5, include_previous_day=True) 
     
-    if df10 is None or len(df10) < 3:
-        logger.debug("[%s] ⚠️ Not enough %d-min data (need 3), skipping", symbol, CANDLE_INTERVAL_MIN)
-        return
+    # We need at least 3 normal candles to derive 3 HA candles.
+    if df10 is None or len(df10) < 3: 
+        logger.debug("[%s] ⚠️ Not enough %d-min data (need 3 normal candles), skipping", symbol, CANDLE_INTERVAL_MIN)
+        return False # Indicate no trade
 
     ha10 = heikin_ashi(df10)
-    if len(ha10) < 2:
-        logger.debug("[%s] ⚠️ Not enough HA candles, skipping", symbol)
-        return
+    # Ensure we have at least 3 HA candles for the new entry logic
+    if len(ha10) < 3: 
+        logger.debug("[%s] ⚠️ Not enough HA candles (need 3), skipping", symbol)
+        return False # Indicate no trade
 
+    # For Exit Logic (prev_ha is the 2nd last HA candle)
     prev_ha = ha10.iloc[-2]
     is_prev_ha_red = prev_ha['c'] < prev_ha['o']
     is_prev_ha_green = prev_ha['c'] > prev_ha['o']
 
-    prev_norm = df10.iloc[-2]
-    is_prev_norm_red = prev_norm['c'] < prev_norm['o']  # existing exit criteria (red normal candle)
-    # 🌟 NEW ENTRY CRITERIA: Previous normal candle must be green
-    is_prev_norm_green = prev_norm['c'] > prev_norm['o']
-
+    # For Entry Logic (prev_prev_ha is the 3rd last HA candle)
+    prev_prev_ha = ha10.iloc[-3]
+    is_prev_prev_ha_red = prev_prev_ha['c'] < prev_prev_ha['o']
 
     prev_high = prev_ha['h']
     seventy_pct_level = 0.7 * prev_high # This variable is kept, but its usage in exit logic is removed as per request.
-    current_price = float(df10['c'].iloc[-1])
+    current_price = float(df10['c'].iloc[-1]) # Current price based on last normal candle close
 
     now = now_ist()
     
@@ -432,11 +438,11 @@ def analyze_and_trade(symbol, state):
     first_candle_close_time = (datetime(2000,1,1,MARKET_OPEN[0],MARKET_OPEN[1]) + timedelta(minutes=CANDLE_INTERVAL_MIN)).time()
     entry_allowed_time = now.replace(hour=first_candle_close_time.hour, minute=first_candle_close_time.minute, second=0, microsecond=0)
 
-    # 1) NEW: No new buy orders after 12:05 PM IST
+    # No new buy orders after 12:05 PM IST
     no_new_buy_after_time = now.replace(hour=12, minute=5, second=0, microsecond=0)
 
 
-    df_last_day = get_historical_ohlc(symbol, minutes=CANDLE_INTERVAL_MIN, days=2, include_previous_day=True) # Fetch for POC as well
+    df_last_day = get_historical_ohlc(symbol, minutes=CANDLE_INTERVAL_MIN, days=5, include_previous_day=True) # Fetch for POC as well
     poc_price = calculate_poc(df_last_day)
 
     cooldown_passed = True
@@ -444,8 +450,8 @@ def analyze_and_trade(symbol, state):
     if last_exit and (time.time() - last_exit) / 60.0 < 15.0:
         cooldown_passed = False
 
-    logger.debug("[%s] DEBUG -> Current Price: %s, POC: %s, HA Red: %s, Norm Red: %s, 70%% PrevHigh: %.2f, Cooldown Passed: %s, Prev HA Green: %s, Prev Norm Green: %s",
-                 symbol, current_price, poc_price, is_prev_ha_red, is_prev_norm_red, seventy_pct_level, cooldown_passed, is_prev_ha_green, is_prev_norm_green)
+    logger.debug("[%s] DEBUG -> Current Price: %s, POC: %s, Prev HA Red: %s, PrevPrev HA Red: %s, Prev HA Green: %s, 70%% PrevHigh: %.2f, Cooldown Passed: %s",
+                 symbol, current_price, poc_price, is_prev_ha_red, is_prev_prev_ha_red, is_prev_ha_green, seventy_pct_level, cooldown_passed)
 
     # ===== EXIT LOGIC =====
     if inst.get('position') == "LONG":
@@ -456,9 +462,6 @@ def analyze_and_trade(symbol, state):
         if is_prev_ha_red:
             exit_condition = True
             exit_reason = "HA_RED"
-        # 2) REMOVED: elif is_prev_norm_red: - removed as per request
-        # 3) REMOVED: elif inst.get('entry_price') and current_price >= 1.8 * inst['entry_price']: - removed as per request
-        # 3) REMOVED: elif current_price <= seventy_pct_level: - removed as per request
         # 4) NEW: Add exit criteria if price reaches below 30% of entry price
         elif inst.get('entry_price') and current_price < 0.3 * inst['entry_price']:
             exit_condition = True
@@ -477,7 +480,7 @@ def analyze_and_trade(symbol, state):
                 if symbol in groww_pos:
                     logger.error("[%s] ❌ After retries still present on Groww — manual check required", symbol)
                     # Don't clear local state if Groww still shows open (user must intervene)
-                    return
+                    return False # Indicate no successful trade action for main loop
 
             # confirm exit price best-effort via quote
             exit_price = None
@@ -499,16 +502,21 @@ def analyze_and_trade(symbol, state):
             logger.info("[%s] ✅ EXIT LONG @ %s qty=%s (reason=%s)", symbol, exit_price, qty, exit_reason)
             if entry_price is not None and exit_price is not None:
                 log_trade(symbol, "LONG", entry_price, exit_price, qty, entry_time, datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S"), exit_reason)
+            return True # Indicate successful trade action
         else:
             logger.debug("[%s] ⏳ Holding LONG, no exit trigger", symbol)
-        return
+        return False # Indicate no trade action
 
     # ===== ENTRY LOGIC =====
+    # NEW ENTRY CRITERIA:
+    # 1. 3rd last HA candle must be RED (prev_prev_ha)
+    # 2. 2nd last HA candle must be GREEN (prev_ha)
+    # 3. Entry on the current candle (implicitly handled by current_price evaluation)
     allow_entry = (
-        now >= entry_allowed_time and
-        now < no_new_buy_after_time and # 1) NEW: No new buy orders after 12:05 PM IST
-        is_prev_ha_green and
-        is_prev_norm_green and  # Retained as per request
+        #now >= entry_allowed_time and
+        #now < no_new_buy_after_time and 
+        is_prev_prev_ha_red and     # NEW: 3rd last HA candle RED
+        is_prev_ha_green and        # NEW: 2nd last HA candle GREEN
         cooldown_passed and
         poc_price and
         current_price > poc_price
@@ -545,16 +553,36 @@ def analyze_and_trade(symbol, state):
                     inst['partial_booked'] = False
                     inst['last_exit_time'] = None # Clear exit time on new entry
                     save_state(state)
+                    return True # Indicate successful trade action
                 else:
                     logger.warning("[%s] ⚠️ Entry not seen on Groww after buy — retrying once", symbol)
-                    place_order(symbol, qty, "BUY")
+                    # Retry once
+                    resp_retry = place_order(symbol, qty, "BUY")
                     time.sleep(2)
+                    groww_pos_retry = fetch_groww_positions()
+                    if symbol in groww_pos_retry:
+                        logger.info("[%s] ✅ Entry confirmed on Groww after retry (qty %s)", symbol, groww_pos_retry[symbol]['qty'])
+                        inst['position'] = 'LONG'
+                        inst['entry_price'] = current_price
+                        inst['entry_time'] = datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S")
+                        inst['last_quantity'] = qty
+                        inst['remaining_qty'] = qty
+                        inst['partial_booked'] = False
+                        inst['last_exit_time'] = None
+                        save_state(state)
+                        return True
+                    else:
+                        logger.error("[%s] ❌ Entry order failed after retry or not confirmed", symbol)
+                        return False # Indicate no successful trade action
             else:
-                logger.error("[%s] ❌ Entry order failed or not placed", symbol)
+                logger.error("[%s] ❌ Initial entry order failed or not placed", symbol)
+                return False # Indicate no successful trade action
         else:
             logger.info("[%s] ℹ️ LTP %s not in quantity brackets, skip", symbol, current_price)
+            return False # Indicate no trade action
     else:
         logger.debug("[%s] ⏳ Entry criteria not met", symbol)
+        return False # Indicate no trade action
 
 # ========= MAIN LOOP =========
 def main_loop():
@@ -572,7 +600,7 @@ def main_loop():
             save_state(state)
             logger.info("Local position file cleared by user at startup.")
 
-    logger.info("🚀 Trader started. Poll interval: %s sec. DRY_RUN: %s", POLL_INTERVAL, DRY_RUN)
+    logger.info("🚀 Trader started. Poll interval: %s sec. DRY_RUN: %s, TOP_N entries: %s", POLL_INTERVAL, DRY_RUN, TOP_N)
 
     global running
     while running:
@@ -591,21 +619,32 @@ def main_loop():
         if is_square_off_time(now):
             square_off_all(state)
             logger.info("⏹️ Square-off complete. Sleeping till market close...")
-            time.sleep(60)
+            time.sleep(60) # Sleep for a minute after square-off
             continue
 
         # Show open positions from local master
         open_positions = {k:v for k,v in state['instruments'].items() if v.get('position')}
         logger.info("📊 Current Local Positions: %s", open_positions or "None")
 
-        # Fetch selection
-        instruments = fetch_top_options()
-        if not instruments:
-            logger.warning("⚠️ No instruments selected this cycle")
+        # Fetch eligible instruments, sorted by LTP descending
+        eligible_instruments = fetch_eligible_options_sorted_by_ltp()
+        if not eligible_instruments:
+            logger.warning("⚠️ No eligible instruments found this cycle")
         else:
-            for itm in instruments:
+            new_entries_this_cycle = 0
+            for itm in eligible_instruments:
+                if new_entries_this_cycle >= TOP_N:
+                    logger.info("🎯 Reached TOP_N (%s) new entries for this cycle. Stopping further entry attempts.", TOP_N)
+                    break # Stop trying to enter new positions
+
                 try:
-                    analyze_and_trade(itm['symbol'], state)
+                    # analyze_and_trade now returns True if an order was successfully placed
+                    trade_successful = analyze_and_trade(itm['symbol'], state)
+                    if trade_successful and state['instruments'][itm['symbol']]['position'] == 'LONG':
+                        new_entries_this_cycle += 1
+                        logger.info("✅ New entry confirmed for %s. Total new entries this cycle: %s/%s", itm['symbol'], new_entries_this_cycle, TOP_N)
+                    # Introduce a small delay between processing instruments to avoid overwhelming the API
+                    time.sleep(1) 
                 except Exception as e:
                     logger.exception("Unexpected error in analyze_and_trade for %s: %s", itm['symbol'], e)
 
