@@ -15,11 +15,11 @@ import pytz
 # ========= USER CONFIG / ENVIRONMENT VARIABLES =========
 # These will be read from environment variables on Render
 # For local testing, you can uncomment and fill them, or set them in your shell.
-# os.environ["API_AUTH_TOKEN"] = "YOUR_GROWW_API_TOKEN"
-# os.environ["DRY_RUN"] = "True" # "True" or "False"
-# os.environ["CLEAR_POSITION_ON_START"] = "False" # "True" or "False"
-# os.environ["EXPIRY_DATE"] = "25O20" # Example: "25O20" for 25th Oct 2020. Adjust for current expiry.
-# os.environ["PERSISTENT_DISK_PATH"] = "/var/data" # Example path for Render persistent disk
+ os.environ["API_AUTH_TOKEN"] = "YOUR_GROWW_API_TOKEN"
+ os.environ["DRY_RUN"] = "False" # "True" or "False"
+ os.environ["CLEAR_POSITION_ON_START"] = "False" # "True" or "False"
+ os.environ["EXPIRY_DATE"] = "25O28" # Example: "25O20" for 25th Oct 2020. Adjust for current expiry.
+ os.environ["PERSISTENT_DISK_PATH"] = "/var/data" # Example path for Render persistent disk
 
 
 API_AUTH_TOKEN = os.getenv("API_AUTH_TOKEN")
